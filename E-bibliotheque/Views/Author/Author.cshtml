@@ -1,0 +1,39 @@
+﻿@using E_librairy.Models
+
+@{
+    Layout = null;
+}
+
+@{
+    var author = (Author)ViewData["author"];
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>E-Librairy - @author.Name</title>
+</head>
+<body>
+    <h1>@author.Name</h1>
+    <h2>Books</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in ViewData["books"] as List<E_librairy.Models.Book>)
+            {
+                <tr>
+                    <td>@book.Id</td>
+                    <td>@book.Title</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

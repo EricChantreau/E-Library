@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>E-Librairy - All Books</title>
+</head>
+<body>
+    <h1>All Books</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in ViewData["books"] as List<E_librairy.Models.Book>)
+            {
+                <tr>
+                    <td>@book.Title</td>
+                    <td>@book.Author.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿@using E_librairy.Models
+
+@{
+    Layout = null;
+}
+
+@{
+    var book = (Book)ViewData["book"];
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>E-Librairy - @book.Title</title>
+</head>
+<body>
+    <h1>@book.Title</h1>
+    <p>Published at: @book.PublishedAt.ToShortDateString()</p>
+    @if (book.Client != null)
+    {
+        <p>Borrowed by: @book.Client.Name</p>
+    }
+</body>
+</html>

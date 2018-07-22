@@ -1,0 +1,22 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>E-librairy - Search Results</title>
+</head>
+<body>
+    <h1>Results for "@ViewData["keyword"]":</h1>
+    <ul>
+        @foreach(var book in ViewData["books"] as List<E_librairy.Models.Book>)
+        {
+            <li>@book.Title (by @book.Author.Name)</li>
+        }
+    </ul>
+</body>
+</html>
